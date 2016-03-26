@@ -6,7 +6,7 @@ if [ -z "${1}" ]; then
 	echo 'Give Authorized key as args.'
 
 	echo -e 'Example of command line:
-	ssh -CD 1080 -o ProxyCommand="docker run --rm -i --name sshd cell/ssh-over-docker $(cat ~/.ssh/id_rsa.pub)" root@127.0.0.1'
+	ssh -CD 1080 -o ProxyCommand="docker run --rm -i cell/ssh-over-docker $(cat ~/.ssh/id_rsa.pub)" root@127.0.0.1'
 	exit 1
 fi
 
