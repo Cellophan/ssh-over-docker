@@ -32,5 +32,6 @@ echo ${@} >/root/.ssh/authorized_keys
 #Starting sshd
 /usr/sbin/sshd -E /var/log/sshd.log
 
+sleep 1
 nc 127.0.0.1 22
 
