@@ -1,6 +1,15 @@
 #!/bin/bash
 
-set -e
+stacktrace () {
+	echo "FAIL: unhandled error. stacktrace:"
+	i=0
+	while caller $i; do
+		i=$((i+1))
+	done
+}
+
+set -Eeuo pipefail
+trap "stacktrace" ERR
 
 if [ -z "${1}" ]; then
 	echo 'Give Authorized key as args.'
