@@ -21,7 +21,7 @@ mkdir /root/.ssh
 echo ${@} >/root/.ssh/authorized_keys
 
 #Starting sshd
-/usr/sbin/sshd
+/usr/sbin/sshd -E /var/log/sshd.log
 
 nc 127.0.0.1 22
 
